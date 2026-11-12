@@ -26,7 +26,7 @@ export const GlobalProvider = ({children}) => {
 
     try {
         const response = await axios.post(
-        "https://brief-1ptv.onrender.com/analyze",
+        "https://brief-gfvg.onrender.com/analyze",
         { url: articleUrl }
         );
 
