@@ -14,12 +14,7 @@ const Sidebar = () => {
       icon: <MdOutlineDashboard />,
     },
     {
-      name: "History",
-      path: "/history",
-      icon: <MdHistory />,
-    },
-    {
-      name: "Recent",
+      name: "Saved",
       path: "/saved",
       icon: <CiBookmark />,
     },
@@ -92,18 +87,6 @@ const Sidebar = () => {
               </li>
             ))}
 
-            <li>
-              <a
-                href="#"
-                onClick={() => setIsOpen(false)}
-                className="flex items-center gap-3 px-4 py-3 rounded-xl font-semibold text-slate-700 dark:text-white hover:bg-slate-100 dark:hover:bg-gray-700 transition-colors"
-              >
-                <span className="text-xl shrink-0">
-                  <CiBookmark />
-                </span>
-                <span>Saved Reports</span>
-              </a>
-            </li>
           </ul>
         </nav>
       </aside>

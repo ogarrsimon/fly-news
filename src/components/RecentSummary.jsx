@@ -40,9 +40,7 @@ const RecentSummary = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {
-          console.log(recentNewsSummary)
-        }
+
         {recentNewsSummary.map((summary, index) => (
           <Link
             to={`/recent/${encodeURIComponent(summary.title)}`}
@@ -50,15 +48,15 @@ const RecentSummary = () => {
             className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-primary/40 transition-all cursor-pointer group shadow-sm overflow-hidden"
           >
             <img
-              src={summary.mainImage}
-              alt={summary.title}
+              src={summary.newsSummary.mainImage}
+              alt={summary.newsSummary.title}
               className="w-full h-40 object-cover"
             />
 
             <div className="p-5">
               <div className="flex justify-between items-start gap-3 mb-4">
                 <span className="px-2 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-[10px] font-bold text-slate-500 uppercase tracking-widest">
-                  {summary.impact_category}
+                  {summary.newsSummary.impact_category}
                 </span>
 
                 <span className="text-xs text-slate-400 shrink-0">
@@ -67,11 +65,11 @@ const RecentSummary = () => {
               </div>
 
               <h4 className="font-bold text-lg text-slate-900 dark:text-white group-hover:text-primary transition-colors mb-2 line-clamp-2">
-                {summary.title}
+                {summary.newsSummary.title}
               </h4>
 
               <p className="text-sm text-slate-600 dark:text-slate-400 line-clamp-2 mb-4">
-                {summary.summary}
+                {summary.newsSummary.summary}
               </p>
             </div>
           </Link>

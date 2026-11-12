@@ -3,11 +3,9 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Footer from './components/Footer'
 import Layout from './layout'
-import History from './pages/History'
-import RecentNews from './pages/recentArticle'
 import Summary from "./pages/article-summary"
 import { Route, Routes } from 'react-router-dom'
-
+import Saved from './pages/Saved'
 function App() {
   return (
     <>
@@ -15,8 +13,7 @@ function App() {
     <Routes> 
       <Route path='/' element={<Layout/>}>
         <Route index element={<Hero/>}/>
-        <Route path='/history' element={<History/>}/>
-        <Route path='/recent/:title' element={<RecentNews/>}/>
+        <Route path='/saved' element={<Saved/>}/>
       </Route>
       <Route path='/summary' element={<Summary/>}/>
     </Routes>
