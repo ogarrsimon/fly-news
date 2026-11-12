@@ -15,6 +15,9 @@ const global_reducer = (state, action) => {
         console.log(action.payload)
         return {...state, isLoading: false, error: true, errorMessage: action.payload}
     }
+    if(action.type === "SET_COPY_MESSAGE") {
+        return {...state, copyMessage: action.payload}
+    }
     return state
 }
 

@@ -2,7 +2,7 @@ import React, {useEffect} from 'react'
 import { useGlobalContext } from '../context/news_context.jsx'
 import { Link } from 'react-router-dom';
 const Summary = () => {
-    const {isLoading, error, getNewsText, newsContent, newsUrl} = useGlobalContext();
+    const {isLoading, error, handleCopySummary, getNewsText, newsContent, newsUrl} = useGlobalContext();
     
     useEffect(() => {
         if(newsUrl) {
@@ -129,7 +129,7 @@ const Summary = () => {
       {/* Action Buttons */}
       <div className="mt-8 sm:mt-10 pt-6 sm:pt-8 border-t border-slate-100 dark:border-slate-800 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[1fr_1fr_auto] gap-3">
 
-        <button className="w-full min-w-0 flex items-center justify-center gap-2 bg-purple-800 text-white px-4 sm:px-6 py-3.5 rounded-xl font-bold hover:opacity-90 transition-all shadow-lg shadow-primary/25">
+        <button onClick={handleCopySummary} className="w-full min-w-0 flex items-center justify-center gap-2 bg-purple-800 text-white px-4 sm:px-6 py-3.5 rounded-xl font-bold hover:opacity-90 transition-all shadow-lg shadow-primary/25">
           <span className="material-symbols-outlined">
             content_copy
           </span>
@@ -138,9 +138,9 @@ const Summary = () => {
 
         <button className="w-full min-w-0 flex items-center justify-center gap-2 bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100 px-4 sm:px-6 py-3.5 rounded-xl font-bold hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">
           <span className="material-symbols-outlined">
-            share
+            save
           </span>
-          Share Article
+          Save Article
         </button>
 
         <button
